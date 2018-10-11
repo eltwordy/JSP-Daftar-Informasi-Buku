@@ -1,0 +1,24 @@
+<%-- 
+    Document   : prosesinputpengarang
+    Created on : 14-Nov-2016, 23:25:01
+    Author     : Rudi Hidayat
+--%>
+
+<%@page import="function.pengarang_1"%>
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+
+
+<jsp:useBean id="u" class="function.fpengarang_1"></jsp:useBean>
+<jsp:setProperty property="*" name="u"/>
+<%
+int i=pengarang_1.save(u);
+if(i>0){
+out.print("<center><b>Input data berhasil !</b></center>");
+}else{
+out.print("<center><b>Input data gagal !</b></center>");
+}
+%>
+<jsp:include page="menu.jsp?folder=halaman&file=pengarang_1.jsp"/>
